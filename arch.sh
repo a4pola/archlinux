@@ -46,8 +46,9 @@ sudo pacman -S --noconfirm wl-clipboard cliphist grim slurp satty wf-recorder
 # 7. INSTALL AUR HELPER (PARU) WITH HANG PROTECTION
 echo "--- Installing Paru (AUR helper) ---"
 if ! command -v paru &> /dev/null; then
-    sudo pacman -S --needed --noconfirm cargo
-   cd /tmp && git clone https://aur.archlinux.org/paru.git && cd paru
+    sudo pacman -S --needed --noconfirm base-devel debugedit cargo
+    cd /tmp && rm -rf paru
+    git clone https://aur.archlinux.org/paru.git && cd paru
     makepkg -si --noconfirm
     cd ~
 fi
