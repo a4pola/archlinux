@@ -53,9 +53,10 @@ if ! command -v paru &> /dev/null; then
     cd ~
 fi
 
-# 8. INSTALL EXTRA SOFTWARE FROM AUR
-echo "--- Installing OnlyOffice and Microsoft Fonts from AUR ---"
-paru -S --noconfirm ttf-ms-win11-auto
+# 8. INSTALL EXTRA SOFTWARE (FONTS + ONLYOFFICE)
+echo "--- Installing font replacements and OnlyOffice ---"
+sudo pacman -S --noconfirm ttf-liberation ttf-dejavu noto-fonts
+paru -S --noconfirm onlyoffice-bin
 
 # 9. GENERATE CONFIGURATIONS AND ENVIRONMENT VARIABLES
 echo "--- Generating config files ---"
