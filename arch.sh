@@ -47,7 +47,7 @@ sudo pacman -S --noconfirm wl-clipboard cliphist grim slurp satty wf-recorder
 echo "--- Installing Paru (AUR helper) ---"
 if ! command -v paru &> /dev/null; then
     sudo pacman -S --needed --noconfirm cargo
-    cd /tmp && git clone https://archlinux.org && cd paru
+   cd /tmp && git clone https://aur.archlinux.org/paru.git && cd paru
     makepkg -si --noconfirm
     cd ~
 fi
