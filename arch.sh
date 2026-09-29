@@ -43,7 +43,7 @@ sudo pacman -S --noconfirm btop ncdu easyeffects lsp-plugins-lv2 calf keepassxc 
 echo "--- Installing clipboard management and screenshot utilities ---"
 sudo pacman -S --noconfirm wl-clipboard cliphist grim slurp satty wf-recorder
 
-# 7. INSTALL AUR HELPER (PARU) WITH HANG PROTECTION
+# 7. INSTALL AUR HELPER (PARU)
 echo "--- Installing Paru (AUR helper) ---"
 if ! command -v paru &> /dev/null; then
     sudo pacman -S --needed --noconfirm base-devel debugedit cargo
@@ -63,13 +63,13 @@ echo "--- Generating config files ---"
 mkdir -p ~/.config/niri ~/.config/alacritty ~/.config/environment.d
 
 # Fix screen sharing (Discord/Telegram) under Wayland
-cat « 'EOF' > ~/.config/environment.d/10-wayland.conf
+cat > ~/.config/environment.d/10-wayland.conf << 'EOF'
 XDG_CURRENT_DESKTOP=niri
 XDG_SESSION_TYPE=wayland
 EOF
 
 # Niri configuration
-cat « 'EOF' > ~/.config/niri/config.kdl
+cat > ~/.config/niri/config.kdl << 'EOF'
 spawn-at-startup "noctalia"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
