@@ -55,7 +55,7 @@ fi
 
 # 8. INSTALL EXTRA SOFTWARE FROM AUR
 echo "--- Installing OnlyOffice and Microsoft Fonts from AUR ---"
-paru -S --noconfirm onlyoffice-bin ttf-ms-fonts
+paru -S --noconfirm ttf-ms-win11-auto
 
 # 9. GENERATE CONFIGURATIONS AND ENVIRONMENT VARIABLES
 echo "--- Generating config files ---"
