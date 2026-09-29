@@ -24,7 +24,8 @@ sudo pacman -S --noconfirm \
     xdg-desktop-portal-wlr xdg-desktop-portal-gtk
 
 # Enable Ly display manager (login screen)
-sudo systemctl enable ly.service
+sudo systemctl disable getty@tty2.service
+sudo systemctl enable ly@tty2.service
 
 # 3. EXTRA UTILITIES, ARCHIVERS, AND RUNTIMES
 echo "--- Installing extra utilities, runtimes and codecs ---"
