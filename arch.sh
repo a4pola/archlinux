@@ -150,7 +150,7 @@ binds {
 EOF
 
 # Config Alacritty
-cat « 'EOF' > ~/.config/alacritty/alacritty.toml
+cat > ~/.config/alacritty/alacritty.toml << 'EOF'
 [font]
 size = 11.0
 [font.normal]
@@ -178,7 +178,7 @@ fi
 # 11. TERMINAL STARTUP GREETING SETUP
 echo "--- Configuring shell greeting (Fastfetch) ---"
 if ! grep -q "fastfetch" ~/.bashrc; then
-cat « 'EOF' » ~/.bashrc
+cat >> ~/.bashrc << 'EOF'
 
 # Custom greeting on terminal startup
 if [ -x "$(command -v fastfetch)" ]; then
