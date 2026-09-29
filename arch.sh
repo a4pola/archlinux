@@ -6,7 +6,7 @@ echo "=== START [VMware + Ly]: Graphics, System & Apps Optimization ==="
 # 1. UPDATE AND SYSTEM OPTIMIZATION
 echo "--- Updating system, enabling SSD trim and cache cleaning ---"
 sudo pacman -Syu --noconfirm
-sudo pacman -S --noconfirm mesa open-vm-tools xf86-video-vmware linux-headers pacman-contrib
+sudo pacman -S --noconfirm mesa open-vm-tools linux-headers pacman-contrib
 
 # Enable automatic package cache cleanup (keep only the last 2 versions)
 sudo systemctl enable --now paccache.timer
